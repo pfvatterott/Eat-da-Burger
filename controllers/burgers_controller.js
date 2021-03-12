@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const burger = require('../models/burger.js');
+const orm = require('../config/orm.js');
 
 
 
@@ -14,9 +15,9 @@ router.get('/', (req, res) => {
 });
 
 router.post('/api/burgers', (req, res) => {
-    console.log(req.body.burgerName)
-    burger.insertOne('burger_name', req.body.burgerName, (result) => {
-        res.json({ id: result.insertId })
+    console.log(req.body.burger_name)
+    burger.insertOne('burger_name', req.body.burger_name, (result) => {
+        res.json({ result })
     })
 })
 
