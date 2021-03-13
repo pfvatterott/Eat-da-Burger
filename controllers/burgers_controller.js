@@ -36,7 +36,16 @@ router.put('/api/burgers/:id', (req, res) => {
         res.status(200).end();
       }
     );
-  });
+});
+
+router.get('*', (req, res) => {
+    burger.selectAll((data) => {
+        const hbsObject = {
+            burgers: data,
+        };
+        res.render('index', hbsObject);
+    })
+});
 
 
 
