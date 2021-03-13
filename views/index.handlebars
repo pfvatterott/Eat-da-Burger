@@ -11,7 +11,7 @@
               {{#each burgers}}
               {{#unless devoured}}
               <li class="collection-item">
-                <div>{{burger_name}}<a class="secondary-content"><i class="fas fa-utensils tooltipped" data-tooltip="Eat it!"></i></a></div>
+                <div>{{burger_name}}<a class="secondary-content"><button data-id="{{id}}" class="fas fa-utensils tooltipped devourBtn" data-tooltip="Eat it!"></button></a></div>
               {{/unless}}
               {{/each}}
             </ul>
