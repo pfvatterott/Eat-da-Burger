@@ -12,7 +12,7 @@ const orm = {
     },
 
     insertOne(table, tableCol, newItem, cb) {
-        const queryString = `INSERT INTO burgers_db.${table} (${tableCol}) VALUES ('${newItem}');`;
+        const queryString = `INSERT INTO ${table} (${tableCol}) VALUES ('${newItem}');`;
         connection.query(queryString, (err, result) => {
             if (err) throw err;
             cb(result);
